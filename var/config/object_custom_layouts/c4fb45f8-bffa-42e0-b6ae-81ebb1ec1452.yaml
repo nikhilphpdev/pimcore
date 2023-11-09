@@ -1,0 +1,14 @@
+pimcore:
+    objects:
+        custom_layouts:
+            definitions:
+                c4fb45f8-bffa-42e0-b6ae-81ebb1ec1452:
+                    id: c4fb45f8-bffa-42e0-b6ae-81ebb1ec1452
+                    name: test
+                    description: ''
+                    creationDate: 1699333200
+                    modificationDate: 1699333200
+                    userOwner: 2
+                    classId: '3'
+                    layoutDefinitions: null
+                    default: 0
