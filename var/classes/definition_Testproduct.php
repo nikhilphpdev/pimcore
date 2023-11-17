@@ -5,23 +5,21 @@
  * Variants: no
  *
  * Fields Summary:
- * - ProductName [input]
- * - ModelNo [input]
+ * - Name [input]
  * - Desc [textarea]
- * - MRP [input]
- * - Sellingprice [input]
- * - SKU [input]
- * - product [objectbricks]
+ * - mobile [numeric]
+ * - sku [input]
+ * - testproduct [classificationstore]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '4',
-   'name' => 'Product',
+   'id' => '5',
+   'name' => 'Testproduct',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1700125180,
+   'modificationDate' => 1700128743,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -66,8 +64,8 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
         array (
           0 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'ProductName',
-             'title' => 'Product Name',
+             'name' => 'Name',
+             'title' => 'Name',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -95,36 +93,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           1 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'ModelNo',
-             'title' => 'Model No',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
-            array (
-            ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
-             'unique' => false,
-             'showCharCount' => false,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
-          2 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
              'name' => 'Desc',
              'title' => 'Desc',
@@ -149,10 +117,40 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'height' => '',
              'width' => '',
           )),
+          2 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+             'name' => 'mobile',
+             'title' => 'Mobile',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'defaultValue' => NULL,
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
+             'unique' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
+             'width' => '',
+             'defaultValueGenerator' => '',
+          )),
           3 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'MRP',
-             'title' => 'M R P',
+             'name' => 'sku',
+             'title' => 'Sku',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -180,9 +178,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           4 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'Sellingprice',
-             'title' => 'Sellingprice',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::__set_state(array(
+             'name' => 'testproduct',
+             'title' => 'Testproduct',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -198,72 +196,27 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
+             'children' => 
             array (
             ),
-             'unique' => false,
-             'showCharCount' => false,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
-          5 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'SKU',
-             'title' => 'S K U',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
+             'labelWidth' => 0,
+             'localized' => false,
+             'storeId' => 1,
+             'hideEmptyData' => false,
+             'disallowAddRemove' => false,
+             'referencedFields' => 
             array (
             ),
-             'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
+             'fieldDefinitionsCache' => NULL,
+             'allowedGroupIds' => 
             array (
             ),
-             'unique' => false,
-             'showCharCount' => false,
-             'width' => '',
-             'defaultValueGenerator' => '',
-          )),
-          6 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'name' => 'product',
-             'title' => 'Product',
-             'tooltip' => '',
-             'mandatory' => false,
-             'noteditable' => false,
-             'index' => false,
-             'locked' => false,
-             'style' => '',
-             'permissions' => NULL,
-             'fieldtype' => '',
-             'relationType' => false,
-             'invisible' => false,
-             'visibleGridView' => false,
-             'visibleSearch' => false,
-             'blockedVarsForExport' => 
+             'activeGroupDefinitions' => 
             array (
-            ),
-             'allowedTypes' => 
-            array (
-              0 => 'Test',
             ),
              'maxItems' => NULL,
-             'border' => false,
+             'height' => NULL,
+             'width' => NULL,
           )),
         ),
          'locked' => false,
