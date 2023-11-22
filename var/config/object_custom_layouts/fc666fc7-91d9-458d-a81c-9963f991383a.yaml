@@ -1,0 +1,75 @@
+pimcore:
+    objects:
+        custom_layouts:
+            definitions:
+                fc666fc7-91d9-458d-a81c-9963f991383a:
+                    id: fc666fc7-91d9-458d-a81c-9963f991383a
+                    name: newproduct
+                    description: ''
+                    creationDate: 1700542477
+                    modificationDate: 1700550261
+                    userOwner: 2
+                    classId: '6'
+                    layoutDefinitions:
+                        name: pimcore_root
+                        type: null
+                        region: null
+                        title: null
+                        width: 0
+                        height: 0
+                        collapsible: false
+                        collapsed: false
+                        bodyStyle: null
+                        datatype: layout
+                        children:
+                            -
+                                name: Layout
+                                type: null
+                                region: null
+                                title: ''
+                                width: ''
+                                height: ''
+                                collapsible: false
+                                collapsed: false
+                                bodyStyle: ''
+                                datatype: layout
+                                children:
+                                    -
+                                        name: sku
+                                        title: Sku
+                                        tooltip: ''
+                                        mandatory: false
+                                        noteditable: false
+                                        index: false
+                                        locked: false
+                                        style: ''
+                                        permissions: null
+                                        fieldtype: input
+                                        relationType: false
+                                        invisible: false
+                                        visibleGridView: false
+                                        visibleSearch: false
+                                        defaultValue: null
+                                        columnLength: 190
+                                        regex: ''
+                                        regexFlags: {  }
+                                        unique: false
+                                        showCharCount: false
+                                        width: ''
+                                        defaultValueGenerator: ''
+                                        datatype: data
+                                locked: false
+                                fieldtype: panel
+                                layout: null
+                                border: false
+                                icon: ''
+                                labelWidth: 100
+                                labelAlign: left
+                        locked: false
+                        fieldtype: panel
+                        layout: null
+                        border: false
+                        icon: null
+                        labelWidth: 100
+                        labelAlign: left
+                    default: 1

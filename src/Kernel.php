@@ -35,5 +35,7 @@ class Kernel extends PimcoreKernel
         $collection->addBundle(new PimcoreAdminBundle(), 60);
         $collection->addBundle(new PimcoreBundleGeneratorBundle(), 60);
         $collection->addBundle(TestBundle\TestBundle::class);
+       // $collection->addBundle(new \Pimcore\Bundle\AdminBundle\PimcoreAdminBundle(), 60);
     }
 }
+

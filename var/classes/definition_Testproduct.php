@@ -9,7 +9,7 @@
  * - Desc [textarea]
  * - mobile [numeric]
  * - sku [input]
- * - testproduct [classificationstore]
+ * - dummy [classificationstore]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
@@ -19,7 +19,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1700128743,
+   'modificationDate' => 1700464953,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -179,8 +179,8 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           )),
           4 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::__set_state(array(
-             'name' => 'testproduct',
-             'title' => 'Testproduct',
+             'name' => 'dummy',
+             'title' => 'Dummy',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -275,6 +275,47 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'deletedDataComponents' => 
   array (
+    0 => 
+    \Pimcore\Model\DataObject\ClassDefinition\Data\Classificationstore::__set_state(array(
+       'name' => 'testproduct',
+       'title' => 'Testproduct',
+       'tooltip' => '',
+       'mandatory' => false,
+       'noteditable' => false,
+       'index' => false,
+       'locked' => false,
+       'style' => '',
+       'permissions' => NULL,
+       'fieldtype' => '',
+       'relationType' => false,
+       'invisible' => false,
+       'visibleGridView' => false,
+       'visibleSearch' => false,
+       'blockedVarsForExport' => 
+      array (
+      ),
+       'children' => 
+      array (
+      ),
+       'labelWidth' => 0,
+       'localized' => false,
+       'storeId' => 1,
+       'hideEmptyData' => false,
+       'disallowAddRemove' => false,
+       'referencedFields' => 
+      array (
+      ),
+       'fieldDefinitionsCache' => NULL,
+       'allowedGroupIds' => 
+      array (
+      ),
+       'activeGroupDefinitions' => 
+      array (
+      ),
+       'maxItems' => NULL,
+       'height' => NULL,
+       'width' => NULL,
+    )),
   ),
    'blockedVarsForExport' => 
   array (

@@ -25,6 +25,7 @@ services:
     TestBundle\Command\:
         resource: '../src/Command/*'
         tags: [ 'console.command' ]
+        
 
 
 # add more services, or override services that need manual wiring

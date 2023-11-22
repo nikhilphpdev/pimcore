@@ -1,0 +1,120 @@
+
+pimcore:
+    workflows:
+        product_workflow:
+            label: "Product Workflow"
+
+            supports: Pimcore\Model\DataObject\Flowproduct
+
+            type: 'state_machine'
+
+            initial_markings: created
+
+            places:
+                created:
+                    label: 'Created'
+                    title: 'Product Created'
+                    color: 'blue'
+                    permissions:
+                        -   condition: "is_fully_authenticated() and 'ROLE_PIMCORE_ADMIN' in role_names"
+                        -   publish: false
+                            unpublish: false
+
+                send_for_approval:
+                    label: 'SEND FOR APPROVAL'
+                    color: 'orange'
+                    permissions:
+                        -   condition: "is_fully_authenticated() and 'ROLE_CATEGORYMANAGER' or 'ROLE_PIMCORE_ADMIN' in role_names"
+                            publish: false
+                        -   publish: true
+                            modify: false
+                        -   modify: true
+
+                approve:
+                    label: 'APPROVE'
+                    color: 'green'
+
+                reject:
+                    label: 'REJECT'
+                    color: 'red'
+                    permissions:
+                        -   publish: false
+                            unpublish: false
+                        -   publish: false
+                            unpublish: false
+
+                re_edit:
+                    label: 'RE-EDIT'
+                    color: 'orange'
+                    permissions:
+                        -   condition: "is_fully_authenticated() and 'ROLE_CATEGORYMANAGER' or 'ROLE_PIMCORE_ADMIN' in role_names"
+                            publish: false
+                        -   publish: true
+                            modify: false
+                        -   modify: true
+
+                re_approve:
+                    label: 'RE-APPROVE'
+                    color: 'green'
+                    permissions:
+                        -   publish: false
+                            unpublish: false
+                        -   publish: true
+                            unpublish: true
+
+                request_for_delete:
+                    label: 'REQUEST-FOR-DELETE'
+                    color: 'red'
+                    permissions:
+                        -   condition: "is_fully_authenticated() and 'ROLE_CATEGORYMANAGER' or 'ROLE_CATEGORYASSOCIATE' or 'ROLE_PIMCORE_ADMIN' in role_names"
+                            publish: false
+                        -   publish: true
+                            delete: true
+                        -   delete: false
+                            
+            transitions:
+                send_for_approval:
+                    from: 'created'
+                    to: 'send_for_approval'
+                    guard: "is_granted('ROLE_CATEGORYASSOCIATE')"
+                    options:
+                        label: 'SEND FOR APPROVAL'
+
+                approve:
+                    from: ['created','send_for_approval']
+                    to: 'approve'
+                    guard: "is_granted('ROLE_CATEGORYMANAGER') or is_granted('ROLE_PIMCORE_ADMIN')"
+                    options:
+                        #changePublishedState: force_published
+                        label: 'APPROVE'
+
+                reject:
+                    from: ['send_for_approval','re_edit']
+                    to: 'reject'
+                    guard: "is_granted('ROLE_CATEGORYMANAGER') or is_granted('ROLE_PIMCORE_ADMIN')"
+                    options:
+                        label: 'REJECT'
+
+                re_edit:
+                    from: ['approve','reject']
+                    to: 're_edit'
+                    guard: "is_granted('ROLE_CATEGORYASSOCIATE') or is_granted('ROLE_CATEGORYMANAGER') or is_granted('ROLE_PIMCORE_ADMIN')"
+                    options:
+                        changePublishedState: force_unpublished
+                        label: 'RE-EDIT'
+
+                re_approve:
+                    from: 're_edit'
+                    to: 'approve'
+                    guard: "is_granted('ROLE_CATEGORYMANAGER') or is_granted('ROLE_PIMCORE_ADMIN')"
+                    options:
+                        #changePublishedState: force_published
+                        label: 'RE-APPROVE'
+
+                request_for_delete:
+                    from: ['approve','reject']
+                    to: 'request_for_delete'
+                    guard: "is_granted('ROLE_CATEGORYMANAGER') or is_granted('ROLE_CATEGORYASSOCIATE') or is_granted('ROLE_PIMCORE_ADMIN')"
+                    options:
+                        label: 'REQUEST-FOR-DELETE'
+                        changePublishedState: force_unpublished

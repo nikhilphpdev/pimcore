@@ -6,6 +6,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Pimcore\Model\DataObject;
+use Pimcore\Model\DataObject\Classificationstore;
 
 
 class Coommandclassi extends AbstractCommand
@@ -31,10 +32,10 @@ class Coommandclassi extends AbstractCommand
             $newObject->setDesc('bbbb');
             $newObject->setMobile(floatval('8889899'));
             $newObject->setSku('56vc');
-            $dtaObject = new \Pimcore\Model\DataObject\Classificationstore\Data\Testing($newObject);
-
-            echo'<pre>'; print_r($dtaObject); exit;
-           
+        $dataObject = \Pimcore\Model\DataObject\Testproduct::getById(205);
+        $classificationStore = $dataObject->getDummy();
+        //$classificationStore->setbrandname(1, 1, 'tesitnnnn');
+            echo'<pre>'; print_r($classificationStore); exit;
             $newObject->setPublished(true);
                 $newObject->save();
         }
