@@ -1,0 +1,30 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    tested:
+                        items:
+                            -
+                                method: resize
+                                arguments:
+                                    width: 80
+                                    height: 70
+                            -
+                                method: setBackgroundColor
+                                arguments:
+                                    color: '#00000'
+                        medias: {  }
+                        name: tested
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1701061710
+                        creationDate: 1700636018
+                        preserveAnimation: false

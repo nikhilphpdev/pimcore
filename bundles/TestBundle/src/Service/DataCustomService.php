@@ -11,7 +11,7 @@ class DataCustomService
         //echo'<pre>'; print_r($line);
            
        $newObject = new DataObject\Product();
-      //echo'<pre>'; print_r($newObject); exit;
+      echo'<pre>'; print_r($newObject); exit;
         $newObject->setKey($line[0]);
         $newObject->setParentId(153);
         $newObject->setproductName($line[0]);

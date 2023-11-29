@@ -5,23 +5,25 @@
  * Variants: no
  *
  * Fields Summary:
- * - ProductName [input]
- * - ModelNo [input]
+ * - Name [input]
+ * - Model [input]
  * - Desc [textarea]
- * - MRP [input]
- * - Sellingprice [input]
+ * - MRP [numeric]
+ * - SellingPrice [numeric]
  * - SKU [input]
- * - product [objectbricks]
+ * - Image [image]
+ * - Gallery [imageGallery]
+ * - imageadvanced [hotspotimage]
  */
 
 return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'dao' => NULL,
-   'id' => '4',
-   'name' => 'Product',
+   'id' => '7',
+   'name' => 'Images',
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1701080029,
+   'modificationDate' => 1701174383,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -66,8 +68,8 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
         array (
           0 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'ProductName',
-             'title' => 'Product Name',
+             'name' => 'Name',
+             'title' => 'Name',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -96,8 +98,8 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           )),
           1 => 
           \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'ModelNo',
-             'title' => 'Model No',
+             'name' => 'Model',
+             'title' => 'Model',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -150,7 +152,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'width' => '',
           )),
           3 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
              'name' => 'MRP',
              'title' => 'M R P',
              'tooltip' => '',
@@ -169,20 +171,20 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
             ),
              'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
              'unique' => false,
-             'showCharCount' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
              'width' => '',
              'defaultValueGenerator' => '',
           )),
           4 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-             'name' => 'Sellingprice',
-             'title' => 'Sellingprice',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Numeric::__set_state(array(
+             'name' => 'SellingPrice',
+             'title' => 'Selling Price',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -199,13 +201,13 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
             array (
             ),
              'defaultValue' => NULL,
-             'columnLength' => 190,
-             'regex' => '',
-             'regexFlags' => 
-            array (
-            ),
+             'integer' => false,
+             'unsigned' => false,
+             'minValue' => NULL,
+             'maxValue' => NULL,
              'unique' => false,
-             'showCharCount' => false,
+             'decimalSize' => NULL,
+             'decimalPrecision' => NULL,
              'width' => '',
              'defaultValueGenerator' => '',
           )),
@@ -240,9 +242,9 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           6 => 
-          \Pimcore\Model\DataObject\ClassDefinition\Data\Objectbricks::__set_state(array(
-             'name' => 'product',
-             'title' => 'Product',
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Image::__set_state(array(
+             'name' => 'Image',
+             'title' => 'Image',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
@@ -258,12 +260,59 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'blockedVarsForExport' => 
             array (
             ),
-             'allowedTypes' => 
+             'uploadPath' => '',
+             'width' => '',
+             'height' => '',
+          )),
+          7 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Data\ImageGallery::__set_state(array(
+             'name' => 'Gallery',
+             'title' => 'Gallery',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
             array (
-              0 => 'Test',
             ),
-             'maxItems' => NULL,
-             'border' => false,
+             'uploadPath' => '',
+             'ratioX' => NULL,
+             'ratioY' => NULL,
+             'predefinedDataTemplates' => '',
+             'height' => '',
+             'width' => '',
+          )),
+          8 => 
+          \Pimcore\Model\DataObject\ClassDefinition\Data\Hotspotimage::__set_state(array(
+             'name' => 'imageadvanced',
+             'title' => 'Imageadvanced',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => false,
+             'style' => '',
+             'permissions' => NULL,
+             'fieldtype' => '',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
+             'blockedVarsForExport' => 
+            array (
+            ),
+             'predefinedDataTemplates' => '',
+             'uploadPath' => '',
+             'width' => '',
+             'height' => '',
           )),
         ),
          'locked' => false,
@@ -322,32 +371,6 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'deletedDataComponents' => 
   array (
-    0 => 
-    \Pimcore\Model\DataObject\ClassDefinition\Data\ImageGallery::__set_state(array(
-       'name' => 'gallary',
-       'title' => 'Gallary',
-       'tooltip' => '',
-       'mandatory' => false,
-       'noteditable' => false,
-       'index' => false,
-       'locked' => false,
-       'style' => '',
-       'permissions' => NULL,
-       'fieldtype' => '',
-       'relationType' => false,
-       'invisible' => false,
-       'visibleGridView' => false,
-       'visibleSearch' => false,
-       'blockedVarsForExport' => 
-      array (
-      ),
-       'uploadPath' => '',
-       'ratioX' => NULL,
-       'ratioY' => NULL,
-       'predefinedDataTemplates' => '',
-       'height' => '',
-       'width' => '',
-    )),
   ),
    'blockedVarsForExport' => 
   array (
